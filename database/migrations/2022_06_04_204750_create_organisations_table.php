@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Organisation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGroupeutilisateurTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +14,11 @@ class CreateGroupeutilisateurTable extends Migration
      */
     public function up()
     {
-        Schema::create('groupeutilisateur', function (Blueprint $table) {
-            $table->integer('id', true);
-            $table->string('libelle', 45)->nullable();
+        Schema::create('organisations', function (Blueprint $table) {
+            $table->id();
+            $table->string(Organisation::NOM);
+            $table->string(Organisation::TYPE);
+            $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ class CreateGroupeutilisateurTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groupeutilisateur');
+        Schema::dropIfExists('organisations');
     }
-}
+};

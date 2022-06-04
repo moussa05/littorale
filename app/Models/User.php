@@ -17,10 +17,33 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    const   ID                    = "id";
+    const   IDORG                 = "idOrg";
+    const   PRENOM                = "prenom";
+    const   NOM                   = "nom";
+    const   DATE_NAISSANCE        = "datenaissance";
+    const   EMAIL                 = "email";
+    const   PASSWORD              = "password";
+    const   DELETED_AT            = "deleted_at";
+    const   NUMERO_TELEPHONE      = "numero_telephone";
+    const   ACTIFYN               = "actifYN";
+    const   POSTE                 = "poste";
+    const   CREATED_AT            = "created_at";
+    const   UPDATED_AT            = "updated_at";
+    const   EMAIL_VERIFIED_AT     = "email_verified_at";
+
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        self::IDORG,
+        self::EMAIL,
+        self::PASSWORD,
+        self::PRENOM,
+        self::NOM,
+        self::DATE_NAISSANCE,
+        self::NUMERO_TELEPHONE,
+        self::DELETED_AT
+
     ];
 
     /**
