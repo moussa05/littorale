@@ -16,10 +16,11 @@ return new class extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->integer(Publication::IDCAT);
-            $table->integer(Publication::IDPUB);
+            $table->unsignedBigInteger(Publication::IDCAT);
+            $table->foreign(Publication::IDCAT)->references('id')->on('categories');
             $table->timestamp(Publication::DATE_PUBLICATION);
-            $table->string(Publication::ACTIFYN)->nullable();
+            $table->integer(Publication::ACTIFYN)->nullable();
+            $table->string(Publication::TITRE)->nullable();
             $table->timestamps();
         });
     }
