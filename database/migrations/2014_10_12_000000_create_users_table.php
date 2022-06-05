@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string(User::NOM)->nullable();
             $table->integer(User::IDORG)->nullable();
             $table->string(User::POSTE)->nullable();
-            $table->string(User::NUMERO_TELEPHONE);
+            $table->string(User::NUMERO_TELEPHONE)->nullable();
             $table->string(User::ACTIFYN)->nullable();
             $table->string(User::EMAIL)->unique()->nullable();
             $table->timestamp(User::DELETED_AT)->nullable();
