@@ -10,7 +10,7 @@ class Publication extends Model
     use HasFactory;
     const   ID                    = "id";
     const   IDCAT                 = "idcat";
-    const   IDPUB                 = "idPub";
+    const   TITRE                 = "titre";
     const   DATE_PUBLICATION      = "datePublication";
     const   ACTIFYN               = "actifYN";
 }

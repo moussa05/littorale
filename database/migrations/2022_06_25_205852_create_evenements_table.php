@@ -17,9 +17,9 @@ return new class extends Migration
     {
         Schema::create('evenements', function (Blueprint $table) {
             $table->id();
-            $table->integer(Evenement::ID_PUB);
+            $table->unsignedBigInteger(Evenement::ID_PUB);
+            $table->foreign(Evenement::ID_PUB)->references('id')->on('publications');
             $table->timestamp(Evenement::DATE_EVENEMENT);
-            $table->string(Evenement::TITRE);
             $table->timestamps();
         });
     }

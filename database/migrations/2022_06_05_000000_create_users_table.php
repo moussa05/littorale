@@ -18,7 +18,8 @@ return new class extends Migration
             $table->id();
             $table->string(User::PRENOM)->nullable();
             $table->string(User::NOM)->nullable();
-            $table->integer(User::IDORG)->nullable();
+            $table->unsignedBigInteger(User::IDORG)->nullable();
+            $table->foreign(User::IDORG)->references('id')->on('organisations');
             $table->string(User::POSTE)->nullable();
             $table->string(User::NUMERO_TELEPHONE)->nullable();
             $table->string(User::ACTIFYN)->nullable();

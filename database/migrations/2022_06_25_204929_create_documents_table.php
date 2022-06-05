@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Document;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,8 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('document_articles', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger(Document::ID_PUB);
+            $table->foreign(Document::ID_PUB)->references('id')->on('publications');
+            $table->string(Document::CHEMIN);
+            $table->string(Document::TYPE);
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('document_articles');
+        Schema::dropIfExists('documents');
     }
 };
