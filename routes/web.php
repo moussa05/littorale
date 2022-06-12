@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin/dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+// Route::get('/admin/addcategory', function () {
+//     return view('admin/add_category');
+// })->middleware(['auth'])->name('admin/addcategory');
+
+
+Route::middleware(['auth'])->group(function () {
+    
+    Route::resource('admin/category', CategoryController::class) ;
+});
 
 require __DIR__.'/auth.php';

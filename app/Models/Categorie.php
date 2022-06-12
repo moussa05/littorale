@@ -10,5 +10,6 @@ class Categorie extends Model
     use HasFactory;
     const   ID                    = "id";
     const   LIBELLE               = "libellle";
+    protected $guarded = [] ; 
 
 }

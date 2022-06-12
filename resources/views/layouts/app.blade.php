@@ -40,16 +40,16 @@
                 </li>
                 <li>
                     <div class="iocn-link">
-                        <a href="#">
-                            <i class='bx bx-collection'></i>
+                        <a href="{{ url('admin/category') }}">
+                            <i class='bx bx-edit'></i>
                             <span class="link_name">Categories</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Categories</a></li>
-                        <li><a href="#">Toutes les Categories</a></li>
-                        <li><a href="#">Ajouter une Categorie</a></li>
+                        <li><a class="link_name" href="{{ url('admin/category') }}">Categories</a></li>
+                        <li><a href="{{ url('admin/category') }}">Toutes les Categories</a></li>
+                        <li><a href="{{ url('admin/category/create') }}">Ajouter une Categorie</a></li>
                     </ul>
                 </li>
                 <li>
@@ -67,7 +67,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="#">
-                            <i class='bx bx-book-alt'></i>
+                            <i class='bx bx-edit'></i>
                             <span class="link_name">Article</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>

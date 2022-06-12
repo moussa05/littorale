@@ -250,17 +250,13 @@
 
 .main_home_content{
   width: 67%;
-  margin-left: 3%;
+  margin-left: 15%;
   padding: 40px;
   background-color: #fff !important;
   border-radius: 20px;
 }
 
-.right_home_content{
-  width: 30%;
-  background: #E4E9F7 !important;
-  padding: 0 30px;
-}
+
 
 .liste_orders{
   height: 100%;
@@ -472,7 +468,7 @@ p.small {
   overflow: hidden;
   top: 0;
   right: 0;
-  background-color: #f59056;
+  background-color: #010b2e;
   border-radius: 0 4px 0 32px;
 }
 
@@ -494,7 +490,7 @@ p.small {
   margin: 12px;
   text-decoration: none;
   z-index: 0;
-  border: 0.5px #fac4a4 solid;
+  border: 0.5px #72849e solid;
   overflow: hidden;
 }
 .card1:before {
@@ -503,7 +499,7 @@ p.small {
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: #f59056;
+  background: #010b2e;
   height: 32px;
   width: 32px;
   border-radius: 32px;
