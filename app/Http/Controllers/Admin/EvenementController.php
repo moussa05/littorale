@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Models\Categorie;
 use App\Models\Evenement;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,10 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        //
+        $evenements = Evenement::all();
+        foreach($evenements as $event){
+            echo($event);
+        } ;
     }
 
     /**
@@ -49,14 +53,13 @@ class EvenementController extends Controller
         $pub->titre = $request->eventName;
         $pub->datePublication = $request->eventDate;
         $pub->idcat = $request->id; 
-        $pub->actifYN = "Y";
-        $pub->save();
+        $pub->actifYN = 1;
+        $idpub = $pub->save();
         Evenement::create([
-            'titre' => $request->eventName,
-            'datePublication' => $request->eventDate,
-            'idcat' => $request->category_id,
-            'actifYN' => "Y"
+            'idPub' => $idpub,
+            'date_evenement' => $request->eventDate
         ]) ;
+        return redirect()->route('category.index');
     }
 
     /**
