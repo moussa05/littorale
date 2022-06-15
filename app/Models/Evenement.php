@@ -13,4 +13,5 @@ class Evenement extends Model
     const   ID_PUB                = "idPub";
     const   DATE_EVENEMENT        = "date_evenement";
     const   TITRE                 = "titre";
+    protected $guarded = [] ; 
 }

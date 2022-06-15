@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href="/allProducts">
+                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href= "{{ url('admin/evenement/create') }}">
                         <h3>Ajouter un evenement </h3>
                         <p class="small">Cliquez ici pour ajouter un nouvel evenement.</p>
                         <div class="go-corner" href="#">
