@@ -12,5 +12,8 @@ class Article extends Model
     const   ID                    = "id";
     const   ID_PUBLICATION        = "idPub";
     const   DESCRIPTION           = "description";
-
+    protected $fillable = [
+        'idPub',
+        'description',
+    ];
 }
