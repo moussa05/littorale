@@ -16,10 +16,10 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        $evenements = Evenement::all();
-        foreach($evenements as $event){
-            echo($event);
-        } ;
+        // $eve= Evenement::find($event ->id)->publication();
+
+       $evenements= Evenement::with('publication')->get();
+       return view('admin.all_event', compact('evenements')) ;
     }
 
     /**
@@ -32,7 +32,6 @@ class EvenementController extends Controller
         //
         $categories = Categorie::all();
         return view('admin.add_event', compact('categories')) ;
-       // return view('admin.add_event') ;
     }
 
     /**
@@ -54,12 +53,13 @@ class EvenementController extends Controller
         $pub->datePublication = $request->eventDate;
         $pub->idcat = $request->id; 
         $pub->actifYN = 1;
-        $idpub = $pub->save();
+        $pub->save();
+        $idpub = $pub->id;
         Evenement::create([
             'idPub' => $idpub,
             'date_evenement' => $request->eventDate
         ]) ;
-        return redirect()->route('category.index');
+        return redirect()->route('evenement.index');
     }
 
     /**
@@ -81,7 +81,11 @@ class EvenementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Categorie::all();
+        $evenement = Evenement::find($id)->publication;
+        $eventSimple = Evenement::find($id);
+        return view('admin.update_event', compact('evenement','categories','eventSimple')) ;
+       
     }
 
     /**
@@ -93,7 +97,17 @@ class EvenementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //je recupére la publication liée à l'événement puis j'enregistre les modifications
+        $publication = Evenement::find($id)->publication;
+        $publication->titre = $request->eventName ;
+        $publication->idcat = $request->id ;
+
+        //je recupére l'événement correspondant puis j'enregistre les modifications
+        $evenement = Evenement::find($id);
+        $evenement->date_evenement = $request->eventDate ;
+        $publication->update();
+        $evenement->update() ;
+        return redirect()->route('evenement.index');
     }
 
     /**
@@ -104,6 +118,8 @@ class EvenementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evenement = Evenement::find($id);
+        $evenement->delete() ;
+        return redirect()->route('evenement.index');
     }
 }

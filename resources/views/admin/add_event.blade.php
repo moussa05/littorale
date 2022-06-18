@@ -40,8 +40,8 @@
                     <input required type="text" name="eventName" class="form-control" id="eventName" placeholder="Event name">
                 </div>
                 <div class="mb-3">
-                    <label for="eventDate" class="form-label">Evénement</label>
-                    <input required type="date" name="eventDate" class="form-control" id="eventDate" placeholder="Event name">
+                    <label for="eventDate" class="form-label">Date de l'evenement</label>
+                    <input required type="date" min="<?php echo(date('Y-m-d', strtotime( Date('d-m-Y')) ))?>" name="eventDate" class="form-control" id="eventDate" placeholder="Event name">
                 </div>
                
                 <button type="submit" class="btn update_btn">Enregister</button>

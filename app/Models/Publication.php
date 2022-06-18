@@ -14,9 +14,9 @@ class Publication extends Model
     const   TITRE                 = "titre";
     const   DATE_PUBLICATION      = "datePublication";
     const   ACTIFYN               = "actifYN";
-
+    protected $guarded = [] ;
     public function evenement()
     {
-        return $this->hasOne(Evenement::class);
+        return $this->hasOne(Evenement::class, 'idPub');
     }
 }
