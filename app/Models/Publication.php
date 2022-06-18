@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Evenement;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Publication extends Model
 {
@@ -13,4 +14,9 @@ class Publication extends Model
     const   TITRE                 = "titre";
     const   DATE_PUBLICATION      = "datePublication";
     const   ACTIFYN               = "actifYN";
+    protected $guarded = [] ;
+    public function evenement()
+    {
+        return $this->hasOne(Evenement::class, 'idPub');
+    }
 }

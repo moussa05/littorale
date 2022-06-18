@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\EvenementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     
     Route::resource('admin/category', CategoryController::class) ;
+    Route::resource('admin/evenement', EvenementController::class);
 });
 
 require __DIR__.'/auth.php';

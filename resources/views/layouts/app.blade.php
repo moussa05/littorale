@@ -87,8 +87,9 @@
                         <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Tous les evenements</a></li>
-                        <li><a class="link_name" href="#">Ajouter un evenement</a></li>
+                        <li><a class="link_name" href="{{ url('admin/evenement') }}">Evenement</a></li>
+                        <li><a class="link_name" href="{{ url('admin/evenement') }}">Tous les evenements</a></li>
+                        <li><a class="link_name" href="{{ url('admin/evenement/create') }}">Ajouter un evenement</a></li>
                     </ul>
                 </li>
                 <li>
