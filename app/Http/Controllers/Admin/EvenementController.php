@@ -6,6 +6,7 @@ use App\Models\Evenement;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class EvenementController extends Controller
 {
@@ -18,7 +19,7 @@ class EvenementController extends Controller
     {
         // $eve= Evenement::find($event ->id)->publication();
 
-       $evenements= Evenement::with('publication')->get();
+       $evenements = Evenement::with('publication')->get();
        return view('admin.all_event', compact('evenements')) ;
     }
 
@@ -48,9 +49,11 @@ class EvenementController extends Controller
             'eventName' => 'required|max:100',
             'eventDate' => 'required',
         ]);
+        $dateDuJour = Carbon::now()->toDateTimeString();
+
         $pub = new Publication;
         $pub->titre = $request->eventName;
-        $pub->datePublication = $request->eventDate;
+        $pub->datePublication = $dateDuJour;
         $pub->idcat = $request->id; 
         $pub->actifYN = 1;
         $pub->save();

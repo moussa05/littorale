@@ -20,10 +20,10 @@
                         </div>
                         </div>
                     </a>
-                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href="#">
+                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href="{{route('article.create')}}">
                         <h3>Ajouter un article</h3>
                         <p class="small">Cliquez ici pour ajouter un nouvel article.</p>
-                        <div class="go-corner" href="#">
+                        <div class="go-corner" href="{{route('article.create')}}">
                             <div class="go-arrow">
                             →
                             </div>
