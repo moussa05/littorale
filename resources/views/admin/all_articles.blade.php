@@ -30,13 +30,13 @@
                 @foreach ($articles as $article)
                 <tr>
                     <th scope="row">#</th>
-                    <td>{{ $article->libellle }}</td>
+                    <td>{{ $article->titre }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <a href="{{ url('admin/category/'.$categorie->id.'/edit') }}">
+                            <a href="{{ route('article.edit', $article->id) }}">
                                 <button type="button" class="btn update_btn">Modifier</button></a>
                             <a href="#"> 
-                                <form action="{{ url('admin/category/'.$categorie->id) }}" method="post" id="destroy-post-form">
+                                <form action="{{ route('article.destroy', $article->id) }}" method="post" id="destroy-post-form">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn delete_btn">Supprimer</button>

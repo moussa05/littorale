@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Evenement;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,8 +17,14 @@ class Publication extends Model
     const   DATE_PUBLICATION      = "datePublication";
     const   ACTIFYN               = "actifYN";
     protected $guarded = [] ;
+    
     public function evenement()
     {
         return $this->hasOne(Evenement::class, 'idPub');
+    }
+
+    public function article()
+    {
+        return $this->hasOne(Article::class, 'idPub');
     }
 }

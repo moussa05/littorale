@@ -45,12 +45,20 @@
                     <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" >
                     </textarea>
                 </div>
-                
+
+               <div class="mb-3">
+                    <div id="dropzone" class="dropzone flex justify-content-center">
+                        <div class="text-center">Sélectionner des fichiers</div>
+                    </div>   
+                </div>
+
                 <button type="submit" class="btn update_btn">Enregister</button>
             </form>
         </div>
     </div>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
     <script type="text/javascript">
         Dropzone.options.dropzone =
          {

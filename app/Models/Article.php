@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Publication;
 
 class Article extends Model
 {
@@ -16,4 +17,9 @@ class Article extends Model
         'idPub',
         'description',
     ];
+
+    public function publication()
+    {
+        return $this->belongsTo(Publication::class, 'idPub');
+    }
 }

@@ -26,12 +26,16 @@ class ArticleController extends Controller
         foreach ($publications as $pub) 
         {
             $art = Article::where('idPub', $pub->id)->first();
+            /**/
             if($art != null)
             {
+                $art['titre'] = $pub->titre;
+                $art['datePublication'] = $pub->datePublication;
+                $art['idUser'] = $pub->idUser;
                 array_push($articles, $art);
             }
         }
-
+        
         return view('admin.all_articles', compact('articles'));
     }
 
@@ -69,7 +73,7 @@ class ArticleController extends Controller
             'idPub' => $idpub,
             'description' => $request->description
         ]) ;
-        return redirect()->route('articles.index');
+        return redirect()->route('article.index');
     }
 
     /**
@@ -91,7 +95,12 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Categorie::all();
+        $publication = Article::find($id)->publication;
+        $article = Article::find($id);
+        if($article)
+            $article['title'] = $publication->titre;
+        return view('admin.update_article', compact('article','categories','publication'));
     }
 
     /**
@@ -103,7 +112,15 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $publication = Article::find($id)->publication;
+        $publication->titre = $request->titre ;
+        $publication->idcat = $request->idCat ;
+        $publication->update();
+
+        $article = Article::find($id);
+        $article->description = $request->description ;
+        $article->update();
+        return redirect()->route('article.index');
     }
 
     /**
@@ -114,6 +131,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete() ;
+        return redirect()->route('article.index');
     }
 }
