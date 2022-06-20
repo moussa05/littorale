@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\UserController;
+=======
+use App\Http\Controllers\Admin\EvenementController;
+>>>>>>> c01b837f070e4b72676d33a4e7a5c527e635b5a8
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/user/unactived/{user}',[UserController::class,'unActived'])->name('user.unactived');
     Route::resource('admin/users', UserController::class);
     Route::resource('admin/category', CategoryController::class) ;
+    Route::resource('admin/evenement', EvenementController::class);
+    Route::resource('admin/article', ArticleController::class);
 });
 require __DIR__.'/auth.php';

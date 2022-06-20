@@ -18,6 +18,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger(Publication::IDCAT);
             $table->foreign(Publication::IDCAT)->references('id')->on('categories');
+            $table->unsignedBigInteger(Publication::IDUSER);
+            $table->foreign(Publication::IDUSER)->references('id')->on('users');
             $table->timestamp(Publication::DATE_PUBLICATION);
             $table->integer(Publication::ACTIFYN)->nullable();
             $table->string(Publication::TITRE)->nullable();
