@@ -3,11 +3,8 @@
 use App\Http\Controllers\Admin\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
-<<<<<<< HEAD
 use App\Http\Controllers\Admin\UserController;
-=======
 use App\Http\Controllers\Admin\EvenementController;
->>>>>>> c01b837f070e4b72676d33a4e7a5c527e635b5a8
 
 /*
 |--------------------------------------------------------------------------
