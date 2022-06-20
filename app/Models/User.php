@@ -32,6 +32,7 @@ class User extends Authenticatable
     const   CREATED_AT            = "created_at";
     const   UPDATED_AT            = "updated_at";
     const   EMAIL_VERIFIED_AT     = "email_verified_at";
+    const   STATUS                = "status";
 
 
     protected $fillable = [
@@ -41,6 +42,7 @@ class User extends Authenticatable
         self::PRENOM,
         self::NOM,
         self::DATE_NAISSANCE,
+        self::STATUS,
         self::NUMERO_TELEPHONE,
         self::DELETED_AT
 

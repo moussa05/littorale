@@ -9,7 +9,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos earum ea aliquid.</p>
             </div>  --}}
             <div class="quick_access w-100 d-flex mt-5">
-                
+
                 <div class="d-flex flex-wrap justify-content-center">
                     <a class="card1 d-flex flex-column justify-content-center align-items-center" href="{{ url('admin/category/create') }}">
                         <h3>Ajouter une categorie</h3>
@@ -38,10 +38,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href="/allCategory">
+                    <a class="card1 d-flex flex-column justify-content-center align-items-center" href="{{ route('users.index') }}">
                         <h3>Gestion des admins</h3>
                         <p class="small">Cliquez ici pour gerer les administrateurs</p>
-                        <div class="go-corner" href="#">
+                        <div class="go-corner" href="{{ route('users.index') }}">
                             <div class="go-arrow">
                             →
                             </div>
@@ -50,6 +50,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </x-app-layout>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreign(User::IDORG)->references('id')->on('organisations');
             $table->string(User::POSTE)->nullable();
             $table->string(User::NUMERO_TELEPHONE)->nullable();
+            $table->string(User::STATUS)->nullable();
             $table->string(User::ACTIFYN)->nullable();
             $table->string(User::EMAIL)->unique()->nullable();
             $table->timestamp(User::DELETED_AT)->nullable();
