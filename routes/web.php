@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\ArticleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\EvenementController;
 
 /*
@@ -34,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/category', CategoryController::class) ;
     Route::resource('admin/evenement', EvenementController::class);
     Route::resource('admin/article', ArticleController::class);
+    Route::resource('admin/document', DocumentController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -59,7 +59,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         Dropzone.options.dropzone =
          {
             maxFilesize: 12,
@@ -101,5 +101,5 @@
                return false;
             }
     };
-    </script>
+    </script> --}}
 </x-app-layout>

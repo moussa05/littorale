@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Publication;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Document extends Model
 {
@@ -13,5 +14,11 @@ class Document extends Model
     const   ID_PUB                = "idPub";
     const   CHEMIN                = "chemin";
     const   TYPE                  = "type";
+    protected $guarded = [] ;
+
+    public function publication()
+    {
+        return $this->belongsTo(Publication::class, 'idPub');
+    }
 
 }
