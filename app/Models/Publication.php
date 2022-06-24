@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Evenement;
 use App\Models\Article;
+use App\Models\Document;
+use App\Models\Evenement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -26,5 +27,10 @@ class Publication extends Model
     public function article()
     {
         return $this->hasOne(Article::class, 'idPub');
+    }
+
+    public function document()
+    {
+        return $this->hasOne(Document::class, 'idPub');
     }
 }

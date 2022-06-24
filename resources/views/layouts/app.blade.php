@@ -56,14 +56,15 @@
                 </li>
                 <li>
                     <div class="iocn-link">
-                        <a href="#">
+                        <a href="{{ url('admin/document') }}">
                             <i class='bx bx-book-alt'></i>
                             <span class="link_name">Documents</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Tous les documents</a></li>
+                        <li><a class="link_name" href="{{ url('admin/document') }}">Tous les documents</a></li>
+                        <li><a href="{{ url('admin/document/create') }}">Ajouter un Document</a></li>
                     </ul>
                 </li>
                 <li>

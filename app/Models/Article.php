@@ -20,6 +20,6 @@ class Article extends Model
 
     public function publication()
     {
-        return $this->belongsTo(Publication::class, 'idPub');
+        return $this->belongsTo(Publication::class, Article::ID_PUBLICATION);
     }
 }
