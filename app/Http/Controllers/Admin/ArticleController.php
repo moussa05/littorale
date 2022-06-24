@@ -9,6 +9,8 @@ use App\Models\Article;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use phpDocumentor\Reflection\Project;
+use phpDocumentor\Reflection\ProjectFactory;
 
 class ArticleController extends Controller
 {
@@ -23,7 +25,7 @@ class ArticleController extends Controller
         $publications = Publication::where('idUser', $user->id)->get();
         $articles = array();
 
-        foreach ($publications as $pub) 
+        foreach ($publications as $pub)
         {
             $art = Article::where('idPub', $pub->id)->first();
             /**/
@@ -35,7 +37,7 @@ class ArticleController extends Controller
                 array_push($articles, $art);
             }
         }
-        
+
         return view('admin.all_articles', compact('articles'));
     }
 
@@ -58,21 +60,27 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $pub = new Publication;
+        /* $pub = new Publication;
         $dateDuJour = Carbon::now()->toDateTimeString();
         $user = Auth::user();
 
         $pub->iduser = $user->id;
         $pub->titre = $request->titre;
         $pub->datePublication = $dateDuJour;
-        $pub->idcat = $request->category_id; 
+        $pub->idcat = $request->category_id;
         $pub->actifYN = 1;
         $pub->save();
         $idpub = $pub->id;
         Article::create([
             'idPub' => $idpub,
             'description' => $request->description
-        ]) ;
+        ]) ; */
+        return $request->all();
+        //$project = Project::create($request->all());
+
+    foreach ($request->input('document', []) as $file) {
+       // $project->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('document');
+    }
         return redirect()->route('article.index');
     }
 

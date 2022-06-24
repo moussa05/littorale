@@ -23,83 +23,62 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('article.store') }}" enctype="multipart/form-data" method="post">
+            <form action="{{ route("article.store") }}" method="POST" enctype="multipart/form-data">
                 @csrf
-              
-                <label class="label">Catégorie</label>
-                <div class="select">
-                    <select name="category_id">
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->libellle }}</option>
-                        @endforeach
-                    </select>
-                </div>
 
-                <div class="mb-3">
-                    <label for="titre" class="form-label">Titre de l'article</label>
-                    <input required type="text" name="titre" class="form-control" id="titre" placeholder="Titre de l'article" required>
-                </div>
-               
-               <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" >
-                    </textarea>
-                </div>
+                {{-- Name/Description fields, irrelevant for this article --}}
 
-               <div class="mb-3">
-                    <div id="dropzone" class="dropzone flex justify-content-center">
-                        <div class="text-center">Sélectionner des fichiers</div>
-                    </div>   
-                </div>
+                <div class="form-group">
+                    <label for="document">Documents</label>
+                    <div class="needsclick dropzone" id="document-dropzone">
 
-                <button type="submit" class="btn update_btn">Enregister</button>
+                    </div>
+                </div>
+                <div>
+                    <input class="btn btn-danger" type="submit">
+                </div>
             </form>
         </div>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
-    <script type="text/javascript">
-        Dropzone.options.dropzone =
-         {
-            maxFilesize: 12,
-            renameFile: function(file) {
-                var dt = new Date();
-                var time = dt.getTime();
-               return time+file.name;
-            },
-            acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            addRemoveLinks: true,
-            timeout: 50000,
-            removedfile: function(file) 
-            {
-                var name = file.upload.filename;
-                $.ajax({
-                    headers: {
-                                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                            },
-                    type: 'POST',
-                    url: '{{ url("image/delete") }}',
-                    data: {filename: name},
-                    success: function (data){
-                        console.log("File has been successfully removed!!");
-                    },
-                    error: function(e) {
-                        console.log(e);
-                    }});
-                    var fileRef;
-                    return (fileRef = file.previewElement) != null ? 
-                    fileRef.parentNode.removeChild(file.previewElement) : void 0;
-            },
-       
-            success: function(file, response) 
-            {
-                console.log(response);
-            },
-            error: function(file, response)
-            {
-               return false;
-            }
-    };
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js" integrity="sha512-WjpgE74jG9eThtZTfBgGuqoKnZYGrVn2quR5496eRKhyy2+mFVb22by0NHXfrhIxz13tIhMmRlBHe3vzlFzxjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </x-app-layout>
+<script>
+    var uploadedDocumentMap = {}
+    Dropzone.options.documentDropzone = {
+      url: '{{ route('document.upload') }}',
+      maxFilesize: 2, // MB
+      addRemoveLinks: true,
+      headers: {
+        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+      },
+      success: function (file, response) {
+        $('form').append('<input type="hidden" name="document[]" value="' + response.name + '">')
+        uploadedDocumentMap[file.name] = response.name
+      },
+      removedfile: function (file) {
+        file.previewElement.remove()
+        var name = ''
+        if (typeof file.file_name !== 'undefined') {
+          name = file.file_name
+        } else {
+          name = uploadedDocumentMap[file.name]
+        }
+        $('form').find('input[name="document[]"][value="' + name + '"]').remove()
+      },
+      init: function () {
+        @if(isset($project) && $project->document)
+          var files =
+            {!! json_encode($project->document) !!}
+          for (var i in files) {
+            var file = files[i]
+            this.options.addedfile.call(this, file)
+            file.previewElement.classList.add('dz-complete')
+            $('form').append('<input type="hidden" name="document[]" value="' + file.file_name + '">')
+          }
+        @endif
+      }
+    }
+  </script>
+

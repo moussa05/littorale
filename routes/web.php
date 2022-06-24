@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EvenementController;
 
@@ -28,6 +29,7 @@ Route::get('/dashboard', function () {
 // Route::get('/admin/addcategory', function () {
 //     return view('admin/add_category');
 // })->middleware(['auth'])->name('admin/addcategory');
+Route::post('admin/document/upload',[DocumentController::class,'uploadFile'])->name('document.upload');
 
 
 Route::middleware(['auth'])->group(function () {
