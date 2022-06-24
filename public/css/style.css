@@ -536,3 +536,164 @@ p.small {
     display: none;
   }
 }
+
+
+/* Style Front End */
+
+/********************************** DEBUT LANDING PAGE/INDEX *****************************/
+#bloc-landing-page {
+  background-color: #593196;
+  min-height: 60vh;
+  color: #ffff;
+  position: absolute;
+  width: 100%;
+  border-radius: 0px 0px 55% 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#bloc-bouttons-lp {
+  display: flex;
+  justify-content: space-between;
+  color: #593196;
+  width: 15%;
+}
+
+#img-landing-page {
+  margin-top: 15rem;
+  height: 60vh;
+  position: relative;
+  left: 0px;
+}
+
+.formBloc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+footer {
+  background-color: #c5c5c5;
+}
+
+.connexion {
+  min-height: 85vh;
+}
+
+/************************************ FIN LANDING PAGE/INDEX **************************************************/
+
+/************************************ DEBUT FORMULAIRE **************************************************/
+.myForm {
+  width: 40% !important;
+  padding: 3em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  font-weight: bold;
+  color: #f3008e;
+}
+
+.mySubmit {
+  background-color: #f3008e !important;
+}
+
+.text-info2 {
+  color: #f3008e !important;
+}
+
+.mySubmi {
+  background-color: #48caeb !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .myForm {
+    width: 80% !important;
+  }
+}
+
+/************************************ FIN FORMULAIRE **************************************************/
+
+/************************************ DEBUT PAGE PRINCIPALE **************************************************/
+main {
+  margin-top: 1%;
+}
+
+.tab-nav {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.tab-content {
+  height: 85vh;
+  overflow-y: scroll;
+  background-color: #f5dff3;
+}
+
+.nav-pills {
+  height: 85vh;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+
+.msg-sent {
+  float: right;
+  background-color: #593196;
+  border-radius: 8px 9px 0px 8px;
+}
+
+.msg-recu {
+  float: left;
+  background-color: #f3008e;
+  border-radius: 9px 8px 8px 0px;
+}
+
+.msg {
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  max-width: fit-content;
+}
+
+.infos-dest {
+  background-color: #593196;
+  width: 100%;
+  color: #ffff;
+  font-size: 2em;
+  text-align: center;
+}
+
+.bloc-msgs {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.tab-pane .active {
+	height: 100%;
+	display: flex !important;
+	flex-direction: column;
+	justify-content: space-between;
+}
+*/
+
+.form-msg {
+  position: sticky;
+  bottom: 0px;
+  margin-top: 5px;
+}
+
+.avatar-img {
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  .nom-contact {
+    display: none;
+  }
+}
+
+/************************************ FIN PAGE PRINCIPALE **************************************************/
