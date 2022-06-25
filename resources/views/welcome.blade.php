@@ -26,10 +26,10 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link active" href="#">Accueil</a></li>
-            <li><a class="nav-link" href="#">A propos</a></li>
-            <li><a class="nav-link" href="#">Contact</a></li>
-            <li><a class="nav-link" href="#">Se connecter</a></li>
+                <li><a class="nav-link active" href="#">Accueil</a></li>
+                <li><a class="nav-link" href="#">A propos</a></li>
+                <li><a class="nav-link" href="#">Contact</a></li>
+                <li><a class="nav-link" href="#">Se connecter</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -54,7 +54,7 @@
             <div class="row container-fluid bloc-2-accueil">
                 <div class="col-lg-9 col-sm-12 row">
                     <div class="col-lg-6 col-sm-12 article-2">
-                        <img class="img-fluid rounded" src="img/art6.jpeg" alt="">
+                        <img style="max-height: 20rem; height:20rem; width: 100%;" class="img-fluid rounded" src="img/art6.jpeg" alt="">
                         <h3>Article sur le littoral</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -63,7 +63,7 @@
                         <a class="btn btn-outline-primary rounded" href="article.html">Voir Plus</a>
                     </div>
                     <div class="col-lg-6 col-sm-12 article-2">
-                        <img class="img-fluid rounded" src="img/art5.jpeg" alt="">
+                        <img style="max-height: 20rem; height:20rem; width: 100%;"  class="img-fluid rounded" src="img/art5.jpeg" alt="">
                         <h3>Article sur le littoral</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -104,7 +104,7 @@
                 <div class="row  bloc-3-accueil">
                     <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles</h2>
                     <div class="col-lg-3 col-sm-12 article-4">
-                        <img class="img-fluid rounded" src="img/art4.jpg" alt="">
+                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art4.jpg" alt="">
                         <h4>Article sur le littoral</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -112,7 +112,7 @@
                         <a href="article.html">Voir Plus</a>
                     </div>
                     <div class="col-lg-3 col-sm-12 article-4">
-                        <img class="img-fluid rounded" src="img/art3.jpg" alt="">
+                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art3.jpg" alt="">
                         <h4>Article sur le littoral</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -120,7 +120,7 @@
                         <a href="article.html">Voir Plus</a>
                     </div>
                     <div class="col-lg-3 col-sm-12 article-4">
-                        <img class="img-fluid rounded" src="img/art2.jpg" alt="">
+                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art2.jpg" alt="">
                         <h4>Article sur le littoral</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -128,7 +128,7 @@
                         <a href="article.html">Voir Plus</a>
                     </div>
                     <div class="col-lg-3 col-sm-12 article-4">
-                        <img class="img-fluid rounded" src="img/art1.jpeg" alt="">
+                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art1.jpeg" alt="">
                         <h4>Article sur le littoral</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -163,9 +163,7 @@
     </section>
 
     <footer class="text-center lead bg-dark w-100 mb-0">
-        <p>
-            Made with &#10084; by M2GDIL 
-        </p>
+        Made with &#10084; by M2GDIL 
     </footer>
 </body>
 </html>
