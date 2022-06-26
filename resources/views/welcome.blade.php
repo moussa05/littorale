@@ -13,6 +13,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
     <title>Observatoire du littorale</title>
+  
 </head>
 <body>
     <!-- ======= Header ======= -->
@@ -45,8 +46,14 @@
                     data-bs-target="#exampleModal"
                 ></i>
             </button>
-
+            &nbsp;&nbsp;
             <i class="bi bi-list mobile-nav-toggle"></i>
+
+            <button type="button" id="butModal" class="btn btn-primary rounded" data-bs-toggle="modal"
+                 data-bs-target="#myModal" data-bs-whatever="@fat">
+                 <i class="bi bi-exclamation-triangle-fill"></i>
+            </button>
+          
         </nav><!-- .navbar -->
 
         </div>
@@ -220,6 +227,48 @@
             </div>
         </div>
     </div>
-
+      <!-- .Formulaire Alerte -->
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header" style = "margin-left: 20%">
+                    <h5 class="modal-title" id="exampleModalLabel" >Vous allez lancer une alerte
+                    <i class="bi bi-exclamation-triangle-fill" style="color : red"></i>
+                    </h5>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                             
+                    </button>
+                </div>
+                <div class="modal-body">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                     @endif
+                    <form method="post" action = "{{ route('alerte.store') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="recipient-name"  class="col-form-label">A propos de:</label>
+                        <input type="text" id="titre" name="titre" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Description:</label>
+                        <textarea id= "description" name = "description" class="form-control" id="message-text"></textarea>
+                    </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Lancer Alerte</button>
+                </div>
+                </form>
+                </div>
+            </div>
+            </div>
 </body>
 </html>

@@ -110,6 +110,20 @@
                     </ul>
                 </li>
                 <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-collection'></i>
+                            <span class="link_name">Alerte</span>
+                        </a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Alerte</a></li>
+                        <li><a href="{{ route('alerte.index') }}">All alert</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
                     <div class="profile-details">
                         <div class="profile-content">
                             <img src="/image/profile.jpg" alt="profileImg">
