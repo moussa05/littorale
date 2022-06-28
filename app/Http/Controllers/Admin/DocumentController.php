@@ -7,24 +7,28 @@ use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {
-    //
+
+    /**
+     * uploading file
+     */
     public function uploadFile(Request $request){
-        $path = storage_path('tmp/uploads');
 
-    if (!file_exists($path)) {
-        mkdir($path, 0777, true);
-    }
-
-    $file = $request->file('file');
-
-    $name = uniqid() . '_' . trim($file->getClientOriginalName());
-
-    $file->move($path, $name);
-
-    return response()->json([
-        'name'          => $name,
-        'original_name' => $file->getClientOriginalName(),
-    ]);
+        $path       = "";
+        $file = $request->file('file');
+        $name = uniqid() . '_' . trim($file->getClientOriginalName());
+        $mime = $name ;//mime_content_type($name);
+        if($this->isVideo($name)){
+            $path = $file->storeAs('videos', $name);
+        }else if($this->isImage($name)){
+            $path = $file->storeAs('images', $name);
+        }else{
+            $path = $file->storeAs('documents', $name);
+        }
+        return response()->json([
+            'name'          => $name,
+            'original_name' => $file->getClientOriginalName(),
+            'path'         =>  $path,
+        ]);
 
 
     }

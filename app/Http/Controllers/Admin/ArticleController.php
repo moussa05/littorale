@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\TestEvent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
 use App\Models\Article;
+use App\Models\Document;
+use App\Models\DocumentArticle;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -19,10 +22,10 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $publications = Publication::where('idUser', $user->id)->get();
+        $publications = Publication::all();
         $articles = array();
 
         foreach ($publications as $pub)
@@ -37,7 +40,7 @@ class ArticleController extends Controller
                 array_push($articles, $art);
             }
         }
-
+        event(new TestEvent("bonjour mr") );
         return view('admin.all_articles', compact('articles'));
     }
 
@@ -60,27 +63,38 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        /* $pub = new Publication;
+        $pub = new Publication;
         $dateDuJour = Carbon::now()->toDateTimeString();
-        $user = Auth::user();
-
-        $pub->iduser = $user->id;
+        $user = $request->user();
+        //$pub->iduser = $user->id;
         $pub->titre = $request->titre;
         $pub->datePublication = $dateDuJour;
         $pub->idcat = $request->category_id;
         $pub->actifYN = 1;
         $pub->save();
         $idpub = $pub->id;
-        Article::create([
+        $article = Article::create([
             'idPub' => $idpub,
             'description' => $request->description
-        ]) ; */
-        return $request->all();
-        //$project = Project::create($request->all());
+        ]) ;
+        foreach ($request->input('document', []) as $file) {
+            $types = 'document';
+            if($this->isVideo($file)){
+                $types = 'video';
 
-    foreach ($request->input('document', []) as $file) {
-       // $project->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('document');
-    }
+            }elseif($this->isImage($file)){
+                $types = 'image';
+            }
+            $document = Document::create([
+                Document::ID_PUB => $idpub,
+                Document::CHEMIN => $file,
+                Document::TYPE   => $types,
+            ]);
+            $document_article = DocumentArticle::create([
+                DocumentArticle::ID_ARTICLE  => $article->id,
+                DocumentArticle::ID_DOCUMENT => $document->id
+            ]);
+        }
         return redirect()->route('article.index');
     }
 

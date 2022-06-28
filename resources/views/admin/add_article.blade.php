@@ -27,6 +27,25 @@
                 @csrf
 
                 {{-- Name/Description fields, irrelevant for this article --}}
+                <label class="label">Catégorie</label>
+                <div class="select">
+                    <select name="category_id">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->libellle }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="titre" class="form-label">Titre de l'article</label>
+                    <input required type="text" name="titre" class="form-control" id="titre" placeholder="Titre de l'article" required>
+                </div>
+
+               <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" >
+                    </textarea>
+                </div>
 
                 <div class="form-group">
                     <label for="document">Documents</label>
@@ -54,7 +73,7 @@
         'X-CSRF-TOKEN': "{{ csrf_token() }}"
       },
       success: function (file, response) {
-        $('form').append('<input type="hidden" name="document[]" value="' + response.name + '">')
+        $('form').append('<input type="hidden" name="document[]" value="' + response.path + '">')
         uploadedDocumentMap[file.name] = response.name
       },
       removedfile: function (file) {

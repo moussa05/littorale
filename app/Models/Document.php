@@ -14,4 +14,9 @@ class Document extends Model
     const   CHEMIN                = "chemin";
     const   TYPE                  = "type";
 
+    protected $fillable = [
+        self::ID_PUB,
+        self::CHEMIN,
+    ];
+
 }

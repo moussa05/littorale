@@ -35,7 +35,7 @@
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <a href="{{ route('article.edit', $article->id) }}">
                                 <button type="button" class="btn update_btn">Modifier</button></a>
-                            <a href="#"> 
+                            <a href="#">
                                 <form action="{{ route('article.destroy', $article->id) }}" method="post" id="destroy-post-form">
                                     @csrf
                                     @method('delete')
@@ -50,4 +50,18 @@
         </table>
     </div>
 </div>
+<script>
+ import Echo from 'laravel-echo';
+
+ window.Pusher = require('pusher-js');
+
+ window.Echo = new Echo({
+     broadcaster: 'pusher',
+     key: process.env.MIX_ABLY_PUBLIC_KEY,
+     wsHost: 'realtime-pusher.ably.io',
+     wsPort: 443,
+     disableStats: true,
+     encrypted: true,
+ });
+</script>
 </x-app-layout>

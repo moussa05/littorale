@@ -12,4 +12,9 @@ class DocumentArticle extends Model
     const   ID                    = "id";
     const   ID_ARTICLE            = "idArticle";
     const   ID_DOCUMENT           = "idDocument";
+
+    protected $fillable = [
+        self::ID_ARTICLE,
+        self::ID_DOCUMENT,
+    ];
 }
