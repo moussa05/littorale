@@ -43,14 +43,15 @@
 
                <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" >
-                    </textarea>
+                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" ></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="document">Documents</label>
-                    <div class="needsclick dropzone" id="document-dropzone">
-
+                    <div class="needsclick dropzone ddz-clickable" id="document-dropzone">
+                        <div class="dz-default dz-message">
+                            <span>Drop files here to upload</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -60,11 +61,15 @@
         </div>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js" integrity="sha512-WjpgE74jG9eThtZTfBgGuqoKnZYGrVn2quR5496eRKhyy2+mFVb22by0NHXfrhIxz13tIhMmRlBHe3vzlFzxjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+
 </x-app-layout>
 <script>
     var uploadedDocumentMap = {}
+
+
     Dropzone.options.documentDropzone = {
       url: '{{ route('document.upload') }}',
       maxFilesize: 2, // MB

@@ -151,9 +151,10 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,Article $article)
     {
-        $article = Article::find($id);
+        $document_article = DocumentArticle::where(DocumentArticle::ID_ARTICLE,$article->id)
+                                            ->delete();
         $article->delete() ;
         return redirect()->route('article.index');
     }
