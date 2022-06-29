@@ -14,7 +14,7 @@
                     <a class="card1 d-flex flex-column justify-content-center align-items-center" href="{{ url('admin/category/create') }}">
                         <h3>Ajouter une categorie</h3>
                         <p class="small">Cliquez ici pour ajouter une nouvelle categorie.</p>
-                        <div class="go-corner" href="#">
+                        <div class="go-corner" href="{{ url('admin/category/create') }}">
                         <div class="go-arrow">
                             →
                         </div>
