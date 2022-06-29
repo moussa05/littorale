@@ -10,6 +10,7 @@ use App\Models\Article;
 use App\Models\Document;
 use App\Models\DocumentArticle;
 use App\Models\Publication;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use phpDocumentor\Reflection\Project;
@@ -25,7 +26,15 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $publications = Publication::all();
+
+        if($user->status == 2){
+            $users = User::where(User::IDORG,$user->iidOrg)->pluck(User::ID)->toArray();
+            $publications = Publication::whereIn(Publication::IDUSER, $users)->get();
+        }elseif($user->status == 3){
+            $publications = Publication::all();
+        }else{
+            $publications = Publication::where(Publication::IDUSER, $user->id)->get();
+        }
         $articles = array();
 
         foreach ($publications as $pub)
