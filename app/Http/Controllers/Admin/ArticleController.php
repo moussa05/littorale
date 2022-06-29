@@ -75,7 +75,7 @@ class ArticleController extends Controller
         $pub = new Publication;
         $dateDuJour = Carbon::now()->toDateTimeString();
         $user = $request->user();
-        //$pub->iduser = $user->id;
+        $pub->iduser = $user->id;
         $pub->titre = $request->titre;
         $pub->datePublication = $dateDuJour;
         $pub->idcat = $request->category_id;
