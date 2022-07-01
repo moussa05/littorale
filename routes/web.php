@@ -22,6 +22,9 @@ use App\Http\Controllers\Admin\EvenementController;
 Route::get('/', function () {
     return view('welcome');
 });
+/*Route::get('/askToJoin', function () {
+    return view('askToJoin');
+});*/
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
