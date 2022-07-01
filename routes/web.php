@@ -23,6 +23,10 @@ use App\Http\Controllers\Controller;
 Route::get('/', [Controller::class,'accueil'])->name("accueil"); /*function () {
     return view('welcome');
 });*/
+/*Route::get('/askToJoin', function () {
+    return view('askToJoin');
+
+});*/
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
