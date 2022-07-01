@@ -138,7 +138,6 @@
             <div class="container-fluid">
                 <div class="row bloc-4-accueil">
                     <div class="col-sm-12 col-lg-6">
-                        <h2>Nous Rejoindre</h2>
                         <h4>Charte de l'observatoire</h4>
                         <p class="text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 

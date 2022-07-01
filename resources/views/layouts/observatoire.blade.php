@@ -101,20 +101,65 @@
         </div>
     </div>
 
-<div class="customizer-links">
-    <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> <a
-        class="nav-link" id="c-pills-home-tab" data-bs-toggle="pill" href="#layout-type" data-bs-original-title=""
-        title="">
-        <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
-        </a> <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="pill" href="#c-pills-home" data-bs-original-title=""
-        title="">
-        <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
-        </a> <a class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
-        data-bs-original-title="" title="">
-        <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
-        </a> 
+    <div class="customizer-links">
+        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> <a
+            class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal">
+            <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
+            </a> <a class="nav-link" id="c-pills-home-tab"  >
+            <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
+            </a> <a class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
+            data-bs-original-title="" title="">
+            <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
+            </a> 
+        </div>
     </div>
-</div>
+     <!-- .Formulaire Alerte -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style = "margin-left: 20%">
+                        <h5 class="modal-title" id="exampleModalLabel" >Vous allez lancer une alerte
+                        <i class="bi bi-exclamation-triangle-fill" style="color : red"></i>
+                        </h5>
+                        
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                            @endif
+                        <form method="post" action = "{{ route('alerte.store') }}">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="recipient-name"  class="col-form-label">A propos de:</label>
+                                <input type="text" id="titre" name="titre" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Description:</label>
+                                <textarea id= "description" name = "description" class="form-control" id="message-text"></textarea>
+                            </div>
+                        
+                    
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-primary">Lancer Alerte</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+
 
 </body>
 </html>
