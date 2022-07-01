@@ -48,11 +48,19 @@
             </button>
             &nbsp;&nbsp;
             <i class="bi bi-list mobile-nav-toggle"></i>
-
-            <button type="button" id="butModal" class="btn btn-primary rounded" data-bs-toggle="modal"
-                 data-bs-target="#myModal" data-bs-whatever="@fat">
-                 <i class="bi bi-exclamation-triangle-fill"></i>
-            </button>
+          <div class="fixed-bottom" >
+                <button type="button" id="butModal" class="btn btn-primary rounded float-end" 
+                    style = "margin-bottom : 5%; margin-right : 2% ; background-color : transparent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal" data-bs-whatever="@fat">
+                 <i class="bi bi-exclamation-triangle-fill"  style = "color: purple" ></i>
+                 <span  class="translate-middle badge border border-light rounded-circle bg-danger p-2 spinner-grow spinner-grow-sm"
+                        role="status">
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+                
+                </button>
+         </div>
           
         </nav><!-- .navbar -->
 
@@ -215,7 +223,8 @@
                             placeholder="Rechercher"
                             aria-label="Search"
                         />
-                        <!--button class="btn btn-outline-success" type="submit">Search</button!-->
+                      
+                        <!--button class="btn btn-outline-success" type="submit">Search</button!-->                      
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -270,5 +279,7 @@
                 </div>
             </div>
             </div>
-</body>
-</html>
+       
+        </body>
+
+        </html>
