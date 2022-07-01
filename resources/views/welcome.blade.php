@@ -18,7 +18,7 @@
 <body>
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top mb-3">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="container-fluid container-lg d-flex align-items-center justify-content-between">
 
         <a href="index.html" class="logo d-flex align-items-start text-decoration-none">
             <!--img src="img/logoUCAD.jpg" alt=""-->
@@ -83,24 +83,16 @@
         <div class="container-fluid">
             <div class="row container-fluid bloc-2-accueil">
                 <div class="col-lg-9 col-sm-12 row">
+                    @foreach($bloc_2_articles as $article)
                     <div class="col-lg-6 col-sm-12 article-2">
                         <img style="max-height: 20rem; height:20rem; width: 100%;" class="img-fluid rounded" src="img/art6.jpeg" alt="">
-                        <h3>Article sur le littoral</h3>
+                        <h3>{{ $article["publication"]->titre }}</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Exercitationem in vitae repellat modi culpa fugit temporibus commodi? Laborum quidem architecto 
+                            {{ $article["article"]->description }} 
                         </p>
-                        <a class="btn btn-outline-primary rounded" href="article.html">Voir Plus</a>
+                        <a class="btn btn-outline-primary rounded" href="{{ route("details-article", $article["article"]->id) }}">Voir Plus</a>
                     </div>
-                    <div class="col-lg-6 col-sm-12 article-2">
-                        <img style="max-height: 20rem; height:20rem; width: 100%;"  class="img-fluid rounded" src="img/art5.jpeg" alt="">
-                        <h3>Article sur le littoral</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Exercitationem in vitae repellat modi culpa fugit temporibus commodi? Laborum quidem architecto 
-                        </p>
-                        <a class="btn btn-outline-primary rounded" href="article.html">Voir Plus</a>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between">
                     <div class="bloc-gauche">

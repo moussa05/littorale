@@ -115,7 +115,21 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::find($id);
+        if($article)
+        {
+            $publication = $article->publication;
+            $article['title'] = $publication->titre;
+            $categorie = Categorie::find($publication->idcat);
+            $nomCategorie = $categorie->libellle;
+            $auteur = User::find($publication->iduser);
+            $nomAuteur = $auteur->prenom." ".$auteur->nom;
+            return view('article', compact('article','nomCategorie','publication', 'nomAuteur'));
+        }
+        else
+        {
+            return abort(404);
+        }
     }
 
     /**
