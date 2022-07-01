@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EvenementController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use App\Http\Controllers\Admin\EvenementController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [Controller::class,'accueil'])->name("accueil"); /*function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
@@ -32,6 +33,8 @@ Route::get('/dashboard', function () {
 // })->middleware(['auth'])->name('admin/addcategory');
 Route::post('admin/document/upload',[DocumentController::class,'uploadFile'])->name('document.upload');
 
+// Détails article
+Route::get('/article/{id}', [ArticleController::class,'show'])->name('details-article');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('admin/user/actived/{user}',[UserController::class,'actived'])->name('user.actived');
