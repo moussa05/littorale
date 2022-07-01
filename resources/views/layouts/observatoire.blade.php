@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_front.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icofont/icofont.css') }}">
     <script src="{{ asset('js/jquery.min.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
@@ -23,7 +24,6 @@
             <!--img src="img/logoUCAD.jpg" alt=""-->
             <span>Observatoire littoral</span>
         </a>
-
         <nav id="navbar" class="navbar">
             <ul class="mr-5">
                 <li><a class="nav-link active" href="#">Accueil</a></li>
@@ -50,6 +50,7 @@
         </nav><!-- .navbar -->
 
         </div>
+        
     </header><!-- End Header -->
 
     <section>
@@ -100,5 +101,21 @@
         </div>
     </div>
 
+<div class="customizer-links">
+    <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> <a
+        class="nav-link" id="c-pills-home-tab" data-bs-toggle="pill" href="#layout-type" data-bs-original-title=""
+        title="">
+        <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
+        </a> <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="pill" href="#c-pills-home" data-bs-original-title=""
+        title="">
+        <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
+        </a> <a class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
+        data-bs-original-title="" title="">
+        <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
+        </a> 
+    </div>
+</div>
+
 </body>
 </html>
+
