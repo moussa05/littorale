@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\TestEvent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
 use App\Models\Article;
+use App\Models\Document;
+use App\Models\DocumentArticle;
 use App\Models\Publication;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use phpDocumentor\Reflection\Project;
+use phpDocumentor\Reflection\ProjectFactory;
 
 class ArticleController extends Controller
 {
@@ -17,13 +23,21 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $publications = Publication::where('idUser', $user->id)->get();
+
+        if($user->status == 2){
+            $users = User::where(User::IDORG,$user->iidOrg)->pluck(User::ID)->toArray();
+            $publications = Publication::whereIn(Publication::IDUSER, $users)->get();
+        }elseif($user->status == 3){
+            $publications = Publication::all();
+        }else{
+            $publications = Publication::where(Publication::IDUSER, $user->id)->get();
+        }
         $articles = array();
 
-        foreach ($publications as $pub) 
+        foreach ($publications as $pub)
         {
             $art = Article::where('idPub', $pub->id)->first();
             /**/
@@ -35,7 +49,7 @@ class ArticleController extends Controller
                 array_push($articles, $art);
             }
         }
-        
+        event(new TestEvent("bonjour mr") );
         return view('admin.all_articles', compact('articles'));
     }
 
@@ -60,19 +74,36 @@ class ArticleController extends Controller
     {
         $pub = new Publication;
         $dateDuJour = Carbon::now()->toDateTimeString();
-        $user = Auth::user();
-
+        $user = $request->user();
         $pub->iduser = $user->id;
         $pub->titre = $request->titre;
         $pub->datePublication = $dateDuJour;
-        $pub->idcat = $request->category_id; 
+        $pub->idcat = $request->category_id;
         $pub->actifYN = 1;
         $pub->save();
         $idpub = $pub->id;
-        Article::create([
+        $article = Article::create([
             'idPub' => $idpub,
             'description' => $request->description
         ]) ;
+        foreach ($request->input('document', []) as $file) {
+            $types = 'document';
+            if($this->isVideo($file)){
+                $types = 'video';
+
+            }elseif($this->isImage($file)){
+                $types = 'image';
+            }
+            $document = Document::create([
+                Document::ID_PUB => $idpub,
+                Document::CHEMIN => $file,
+                Document::TYPE   => $types,
+            ]);
+            $document_article = DocumentArticle::create([
+                DocumentArticle::ID_ARTICLE  => $article->id,
+                DocumentArticle::ID_DOCUMENT => $document->id
+            ]);
+        }
         return redirect()->route('article.index');
     }
 
@@ -129,9 +160,10 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,Article $article)
     {
-        $article = Article::find($id);
+        $document_article = DocumentArticle::where(DocumentArticle::ID_ARTICLE,$article->id)
+                                            ->delete();
         $article->delete() ;
         return redirect()->route('article.index');
     }

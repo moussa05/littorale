@@ -23,6 +23,7 @@
         <script src="{{ asset('js/script.js') }}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
+
     </head>
     <body>
         <div class="sidebar close">
@@ -107,6 +108,20 @@
                         <li><a class="link_name" href="#">Administration</a></li>
                         <li><a href="{{ route('users.index') }}">Tous les Admin</a></li>
                         <li><a href="#">Ajouter un Admin</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-collection'></i>
+                            <span class="link_name">Alerte</span>
+                        </a>
+                        <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Alerte</a></li>
+                        <li><a href="{{ route('alerte.index') }}">All alert</a></li>
+                        
                     </ul>
                 </li>
                 <li>

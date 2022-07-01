@@ -11,37 +11,34 @@
             <div class="d-flex">
                 <i class="bx bx-collection"></i>
                 <h3 class="text_header  ">
-                    Liste des Articles
+                    LA LISTE DES ALERTES
                 </h3>
             </div>
-            <a href="{{ route('article.create') }}" class="btn_ajout_item">
-                Ajouter article
-            </a>
+          
         </div>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Article</th>
-                    <th scope="col">Options</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($articles as $article)
+                @foreach ($alertes as $alerte)
                 <tr>
                     <th scope="row">#</th>
-                    <td>{{ $article->titre }}</td>
+                    <td>{{ $alerte->description }}</td>
+                    <td>{{ $alerte->created_at }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <a href="{{ route('article.edit', $article->id) }}">
-                                <button type="button" class="btn update_btn">Modifier</button></a>
-                            <a href="#">
-                                <form action="{{ route('article.destroy', $article) }}" method="post" id="destroy-post-form">
+                            
+                                <form action="{{ url('admin/alerte/'.$alerte->id) }}" method="post" id="destroy-post-form">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn delete_btn">Supprimer</button>
                                 </form>
-                                 </a>
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -50,5 +47,4 @@
         </table>
     </div>
 </div>
-
 </x-app-layout>

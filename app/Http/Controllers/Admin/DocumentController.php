@@ -16,6 +16,28 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /**
+     * uploading file
+     */
+    public function uploadFile(Request $request){
+
+        $path       = "";
+        $file = $request->file('file');
+        $name = uniqid() . '_' . trim($file->getClientOriginalName());
+        $mime = $name ;//mime_content_type($name);
+        if($this->isVideo($name)){
+            $path = $file->storeAs('videos', $name);
+        }else if($this->isImage($name)){
+            $path = $file->storeAs('images', $name);
+        }else{
+            $path = $file->storeAs('documents', $name);
+        }
+        return response()->json([
+            'name'          => $name,
+            'original_name' => $file->getClientOriginalName(),
+            'path'         =>  $path,
+        ]);
+    }
     public function index()
     {
         $documents = Document::with('publication')->get();
@@ -45,13 +67,13 @@ class DocumentController extends Controller
             'title' => 'required|max:100',
             'file' => 'required',
             'type' => 'required',
-        ]); 
+        ]);
         $dateDuJour = Carbon::now()->toDateTimeString();
 
         $pub = new Publication;
         $pub->titre = $request->title;
         $pub->datePublication = $dateDuJour;
-        $pub->idcat = $request->id; 
+        $pub->idcat = $request->id;
         $pub->actifYN = 1;
         $pub->save();
         $idpub = $pub->id;
@@ -63,7 +85,7 @@ class DocumentController extends Controller
                 break;
             case '2':
                 $filestorage = 'Video' ;
-                break;    
+                break;
             case '3':
                 $filestorage = 'Docs' ;
                 break;

@@ -21,4 +21,9 @@ class Document extends Model
         return $this->belongsTo(Publication::class, 'idPub');
     }
 
+    protected $fillable = [
+        self::ID_PUB,
+        self::CHEMIN,
+    ];
+
 }
