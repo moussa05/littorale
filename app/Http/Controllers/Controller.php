@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Categorie;
+use App\Models\Evenement;
 use App\Models\Publication;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -45,11 +46,45 @@ class Controller extends BaseController
         }
     }
 
+    // récupère la date et renvoie le mois en lettres
+    function getMonthInLetters($date)
+    {
+        $month = substr($date, 5, 2);
+        switch ($month) {
+            case '01':
+                return 'Janvier';
+            case '02':
+                return 'Février';
+            case '03':
+                return 'Mars';
+            case '04':
+                return 'Avril';
+            case '05':
+                return 'Mai';
+            case '06':
+                return 'Juin';
+            case '07':
+                return 'Juillet';
+            case '08':
+                return 'Août';
+            case '09':
+                return 'Septembre';
+            case '10':
+                return 'Octobre';
+            case '11':
+                return 'Novembre';
+            case '12':
+                return 'Décembre';
+            default:
+                return 'Erreur';
+        }
+    }
+
     function accueil()
     {
-        $articles = Article::take(2)->get();
+        // recuperer 2 articles
+        $articles = Article::latest()->take(2)->get();
         $bloc_2_articles = array();
-        $bloc_4_articles = array();
         foreach ($articles as $article)
         {
             $categorie = Categorie::find($article->publication->idcat);
@@ -64,7 +99,38 @@ class Controller extends BaseController
             ];
             array_push($bloc_2_articles, $publication);
         }
+
+        // recuperer 4 articles
+        $articles = Article::latest()->take(4)->get();
+        $bloc_4_articles = array();
+        foreach ($articles as $article)
+        {
+            $categorie = Categorie::find($article->publication->idcat);
+            $nomCategorie = $categorie->libellle;
+            $auteur = User::find($article->publication->iduser);
+            $nomAuteur = $auteur->prenom." ".$auteur->nom;
+            $publication = [
+                "publication" => $article->publication,
+                "article" => $article,
+                "categorie" => $nomCategorie,
+                "auteur" => $nomAuteur,
+            ];
+            array_push($bloc_4_articles, $publication);
+        }
         
-        return view('welcome', compact('bloc_2_articles'));
+        // recuperer 3 evenements
+        $events = Evenement::latest()->take(4)->get();
+        $bloc_events = array();
+        foreach ($events as $event)
+        {
+            $publication = [
+                "publication" => $event->publication,
+                "jour" => substr($event->date_evenement, 8, 2),
+                "mois" => $this->getMonthInLetters($event->date_evenement),
+            ];
+            array_push($bloc_events, $publication);
+        }
+
+        return view('welcome', compact('bloc_2_articles', 'bloc_4_articles', 'bloc_events'));
     }    
 }

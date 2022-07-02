@@ -49,6 +49,7 @@ class AlerteController extends Controller
         $pub->titre = $request->titre;
         $pub->datePublication = $dateDuJour;
         $pub->idcat = 1; 
+        $pub->iduser = 1; 
         $pub->actifYN = 0;
         $pub->save();
         $idpub = $pub->id;
@@ -56,7 +57,7 @@ class AlerteController extends Controller
             'idPub' => $idpub,
             'description' => $request->description
         ]) ;
-        return view('welcome');
+        return back()->with('success', 'Alerte créée avec succès');
     }
 
     /**
