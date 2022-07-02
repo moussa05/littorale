@@ -88,94 +88,82 @@
                         <img style="max-height: 20rem; height:20rem; width: 100%;" class="img-fluid rounded" src="img/art6.jpeg" alt="">
                         <h3>{{ $article["publication"]->titre }}</h3>
                         <p>
-                            {{ $article["article"]->description }} 
+                            {{ substr($article["article"]->description, 0, 65)."..." }} 
                         </p>
                         <a class="btn btn-outline-primary rounded" href="{{ route("details-article", $article["article"]->id) }}">Voir Plus</a>
                     </div>
                     @endforeach
                 </div>
                 <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between">
-                    <div class="bloc-gauche">
-                        <h4>Article sur le littoral</h4>
-                        <p class="text-justify">
+                    @foreach($bloc_events as $event)
+                    <div class="bloc-gauche row">
+                        <div class="col-sm-4 border d-flex flex-column align-items-center justify-content-center">
+                            <h4>{{ $event["jour"] }}</h4>
+                            <h6 class="text-secondary">{{ $event["mois"] }}</h6>
+                        </div>
+                        <p class="text-justify col-sm-8">
+                            {{ $event["publication"]->titre }} 
+                        </p>
+                    </div>
+                    @endforeach
+                    <!--div class="bloc-gauche row">
+                        <div class="col-sm-4 border d-flex flex-column align-items-center justify-content-center">
+                            <h4>02</h4>
+                            <h6 class="text-secondary">Juillet</h6>
+                        </div>
+                        <p class="text-justify col-sm-8">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Laborum quidem. 
                         </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
-                    <div class="bloc-gauche">
-                        <h4>Article sur le littoral</h4>
-                        <p class="text-justify">
+                    </!--div>
+                    <div-- class="bloc-gauche row">
+                        <div class="col-sm-4 border d-flex flex-column align-items-center justify-content-center">
+                            <h4>02</h4>
+                            <h6 class="text-secondary">Juillet</h6>
+                        </div>
+                        <p class="text-justify col-sm-8">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Laborum quidem. 
                         </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
-                    <div class="bloc-gauche">
-                        <h4>Article sur le littoral</h4>
-                        <p class="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Laborum quidem. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
+                    </div-->
                 </div>
             </div>
 
             <div class="container-fluid">
                 <div class="row  bloc-3-accueil">
-                    <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles</h2>
+                    <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles <a href="article.html" class="btn btn-outline-primary">Voir Tous</a></h2>
+                    @foreach($bloc_4_articles as $article)
                     <div class="col-lg-3 col-sm-12 article-4">
                         <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art4.jpg" alt="">
-                        <h4>Article sur le littoral</h4>
+                        <h4>{{ $article["publication"]->titre }}</h4>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            {{ substr($article["article"]->description, 0, 50)."..." }} 
                         </p>
-                        <a href="article.html">Voir Plus</a>
+                        <a href="{{ route("details-article", $article["article"]->id) }}">Voir Plus</a>
                     </div>
-                    <div class="col-lg-3 col-sm-12 article-4">
-                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art3.jpg" alt="">
-                        <h4>Article sur le littoral</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 article-4">
-                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art2.jpg" alt="">
-                        <h4>Article sur le littoral</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 article-4">
-                        <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art1.jpeg" alt="">
-                        <h4>Article sur le littoral</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
-                    </div>
+                    @endforeach
                 </div>
             </div> 
             
             <div class="container-fluid">
                 <div class="row bloc-4-accueil">
                     <div class="col-sm-12 col-lg-6">
-                        <h4>Article sur le littoral</h4>
-                        <p class="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Laborum quidem. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
-
-                        <h4 class="mt-4">Article sur le littoral</h4>
-                        <p class="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Laborum quidem. 
-                        </p>
-                        <a href="article.html">Voir Plus</a>
+                        <div>
+                            <h4>Article sur le littoral</h4>
+                            <p class="text-justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Laborum quidem. 
+                            </p>
+                            <a href="article.html">Voir Plus</a>
+                        </div>
+                        <div>
+                            <h4 class="mt-4">Article sur le littoral</h4>
+                            <p class="text-justify">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Laborum quidem. 
+                            </p>
+                            <a href="article.html">Voir Plus</a>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-lg-6 rounded bloc-4-gauche">
                     </div>
