@@ -106,7 +106,7 @@
                         <a href="article.html">Voir Plus</a>
                     </div>
                     <div class="col-sm-12 col-lg-6 rounded bloc-4-gauche">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.4413536468855!2d-17.474837185214334!3d14.687615378876147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec17347a7ddca45%3A0xe0ca3b156cde76d!2sCorniche%20Ouest!5e0!3m2!1sfr!2ssn!4v1656189860251!5m2!1sfr!2ssn" width="694" height="264" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.4413536468855!2d-17.474837185214334!3d14.687615378876147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec17347a7ddca45%3A0xe0ca3b156cde76d!2sCorniche%20Ouest!5e0!3m2!1sfr!2ssn!4v1656189860251!5m2!1sfr!2ssn" width="694" height="264" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
