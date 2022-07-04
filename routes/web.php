@@ -1,13 +1,14 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AskToJoin;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AlerteController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DocumentController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EvenementController;
-use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/document', DocumentController::class);
 });
 Route::resource('admin/alerte', AlerteController::class);
-
+Route::resource('admin/join', AskToJoin::class);
 require __DIR__.'/auth.php';
