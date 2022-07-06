@@ -9,7 +9,7 @@
             <div class="d-flex">
                 <i class="bx bx-add-to-queue"></i>
                 <h3 class="text_header  ">
-                    Nouveau Evénement
+                    Nouveau Article
                 </h3>
             </div>
         </div>
