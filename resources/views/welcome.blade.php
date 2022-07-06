@@ -74,7 +74,7 @@
 
             <div class="container-fluid">
                 <div class="row  bloc-3-accueil">
-                    <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles <a href="{{route('articles')}}" class="btn btn-outline-primary">Voir Tout</a></h2>
+                    <h2 style="color: #033386;margin-bottom: 10px;">Articles <a href="{{route('articles')}}" class="btn btn-outline-primary">Voir Tout</a></h2>
                     @foreach($bloc_4_articles as $article)
                     <div class="col-lg-3 col-sm-12 article-4">
                         <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art4.jpg" alt="">
@@ -91,12 +91,12 @@
             <div class="container-fluid">
                 <div class="row bloc-4-accueil">
                     <div class="col-sm-12 col-lg-6">
-                        <h4>Charte de l'observatoire</h4>
+                        <h4>Alertes</h4>
                         <p class="text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Laborum quidem. 
                         </p>
-                        <a href="article.html">Voir Plus</a>
+                        <a href="{{route('alertes')}}">Voir Plus</a>
 
                         <h4 class="mt-4">Les membres de l'observatoire</h4>
                         <p class="text-justify">
