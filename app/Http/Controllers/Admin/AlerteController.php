@@ -21,6 +21,12 @@ class AlerteController extends Controller
         return view('admin.all_alerte', compact('alertes')) ;
     }
 
+    public function allAlertes()
+    {
+        $alertes = Alerte::latest()->get();
+        return view('allAlertesPublique', compact('alertes'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
