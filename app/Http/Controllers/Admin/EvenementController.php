@@ -7,6 +7,7 @@ use App\Models\Publication;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class EvenementController extends Controller
 {
@@ -44,6 +45,7 @@ class EvenementController extends Controller
     public function store(Request $request)
     {
         
+        $user = Auth::user();
         
         $request->validate([
             'eventName' => 'required|max:100',
@@ -56,6 +58,7 @@ class EvenementController extends Controller
         $pub->datePublication = $dateDuJour;
         $pub->idcat = $request->id; 
         $pub->actifYN = 1;
+        $pub->iduser = $user->id;
         $pub->save();
         $idpub = $pub->id;
         Evenement::create([
