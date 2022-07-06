@@ -20,7 +20,8 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/', [Controller::class,'accueil'])->name("accueil");
+Route::get('/', [Controller::class,'accueil'])->name("accueil"); 
+Route::get('/articles', [ArticleController::class,'allArticles'])->name("articles"); 
 /*Route::get('/askToJoin', function () {
     return view('askToJoin');
 

@@ -74,7 +74,7 @@
 
             <div class="container-fluid">
                 <div class="row  bloc-3-accueil">
-                    <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles <a href="article.html" class="btn btn-outline-primary">Voir Tous</a></h2>
+                    <h2 style="color: #033386;margin-bottom: 10px;">Bloc de 4 articles <a href="{{route('articles')}}" class="btn btn-outline-primary">Voir Tout</a></h2>
                     @foreach($bloc_4_articles as $article)
                     <div class="col-lg-3 col-sm-12 article-4">
                         <img style="max-height: 10rem; height:10rem; width: 100%;" class="img-fluid rounded" src="img/art4.jpg" alt="">
