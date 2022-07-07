@@ -4,7 +4,7 @@
         <div class="main_home_content nice_nical_benito h-100">
             {{-- <div class="colored_resume_xaliss nice_nical_benito">
                 <h3 class="text_header">
-                    Tableau de bord Xaragn
+                    Tableau de bord Observatoire Littoral
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos earum ea aliquid.</p>
             </div>  --}}
