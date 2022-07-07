@@ -53,6 +53,12 @@ class ArticleController extends Controller
         return view('admin.all_articles', compact('articles'));
     }
 
+    public function allArticles()
+    {
+        $articles = Article::latest()->get();
+        return view('allArticlesPublique', compact('articles'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

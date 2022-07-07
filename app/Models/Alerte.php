@@ -13,4 +13,9 @@ class Alerte extends Model
     const   ID_PUB                   = "idPub";
     const   DESCRIPTION             = "description";
     protected $guarded = [] ; 
+
+    public function publication()
+    {
+        return $this->belongsTo(Publication::class, Alerte::ID_PUB);
+    }
 }
