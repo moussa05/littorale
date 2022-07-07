@@ -1,65 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Observatoire national du littoral
+Instant messaging app with "pure" HTML, CSS, JavaScript, AJAX and PHP
+## Manuel d'installation
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Pour installer l’application, vous pouvez le cloner à partir de votre terminal en utilisant la commande git clone https://github.com/moussa05/littorale.git. Après avoir installé Laravel, Composer et un système de gestion de base de données MySQL sur votre ordinateur, vous pouvez suivre les étapes suivantes.
+Etapes à suivre : 
+* Ouvrir le dossier « littorale »  sur un terminal
+* Lancer la commande composer install  pour installer les dépendances
+* Sur PHPMyAdmin, créer une base de données nommée observatoire_littoral et importez le fichier observatoire_littoral.sql dans la base de données  
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Manuel d'utilisation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pour utiliser la plateforme, il faut :
+* Se déplacer jusqu’ à la racine du projet à partir de la ligne de commande
+* Et enfin lancer la commande `php artisan serve` pour démarrer l’application.
+L’application est maintenant accessible à partir de votre navigateur sur le lien http://127.0.0.1:8000/
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sur la page d’accueil, vous pouvez visualiser toutes les actualités, ces dernières sont classées en catégories (article, événement, alerte …).
+* Le « customizer » qui se trouve à droite de l’écran d’accueil regroupe trois boutons. 
+- Le bouton permettant de lancer une alerte
+- Le bouton permettant d’envoyer une demande d’adhésion
+- Et le bouton à propos
+* Vous pouvez faire une recherche en cliquant sur le bouton de recherche qui se trouve sur le menu.
+* Si vous disposer des droits de connexion, vous pouvez vous connecter en cliquant sur le bouton « se connecter » qui se trouve sur le menu. 
+* Ensuite vous devez vous authentifier pour accéder à votre espace personnel.
+* A partir de là, vous pouvez créer des articles et des événements, les modifier, les supprimer.
+* Vous pouvez vous déconnecter en cliquant sur le bouton « se déconnecter » qui se trouve sur le menu en bas à gauche. 
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## TECH
 
-## Laravel Sponsors
+* Laravel 9
+* MySQL
+* Bootstrap 5 
+* JavaScript
+* HTML
+* CSS
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## CREDIT
+* [https://avatars.dicebear.com/](https://avatars.dicebear.com/) : pour les avatars des utilisateurs
+* [https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css) : pour les icones
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- yyy
+## CONTRIBUTORS
+|Github Profile|Email|     
+|----|-----|
+|[rootniang](https://github.com/rootniang)|marfadiga@gmail.com|
+|[moussa05](https://github.com/moussa05)|bamoussa220@gmail.com|
+|[babatop2313](https://github.com/babatop2313)|babatop2313@gmail.com|
+|[ayshagassama1](https://github.com/ayshagassama1)|ayshagassama1@gmail.com|
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

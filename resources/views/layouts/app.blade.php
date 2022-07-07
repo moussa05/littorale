@@ -78,8 +78,8 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a class="link_name" href="#">Article</a></li>
-                        <li><a href="#">Tous les articles</a></li>
-                        <li><a href="#">Ajouter un article</a></li>
+                        <li><a href="{{ route('article.index') }}">Tous les articles</a></li>
+                        <li><a href="{{ route('article.create') }}">Ajouter un article</a></li>
                     </ul>
                 </li>
                 <li>
@@ -127,10 +127,20 @@
                     </ul>
                 </li>
                 <li>
+                    @php
+                    $nom = Auth::user()->nom;
+                    $prenom = Auth::user()->prenom;
+                    @endphp
                     <div class="profile-details">
+<<<<<<< HEAD
                         <
+=======
+                        <div class="profile-content">
+                            <img src="https://avatars.dicebear.com/api/initials/{{$prenom." ".$nom}}.svg" alt="profileImg">
+                        </div>
+>>>>>>> 9b574590fb4023500c2ef34d8c43b6751541fc30
                         <div class="name-job">
-                            <div class="profile_name">Mame Mar</div>
+                            <div class="profile_name">{{$prenom}}</div>
                             <div class="job">Administrateur</div>
                         </div>
                         <form method="POST" action="{{ route('logout') }}">

@@ -43,7 +43,7 @@
 
                <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" ></textarea>
+                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Description article" ></textarea>
                 </div>
 
                 <div class="form-group">
