@@ -8,7 +8,7 @@
                 <circle
                     style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; 
                              stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; 
-                             fill: purple; fill-rule: nonzero; opacity: 1;"
+                             fill: rgb(51 ,0, 102); fill-rule: nonzero; opacity: 1;"
                     cx="0" cy="0" r="40"></circle>
             </g>
             <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
@@ -62,7 +62,7 @@
                     <ion-icon class="show-hide" name="eye-outline"></ion-icon>
                 </div>
             </div>
-            <button type="submit" class="login" style="background-color: purple;">Se Connecter</button>
+            <button type="submit" class="login" style="background-color: rgb(51 ,0, 102);">Se Connecter</button>
         </form>
     </div>
 

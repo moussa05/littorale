@@ -10,7 +10,7 @@
         <div class="header_liste d-flex">
             <div class="d-flex">
                 <i class="bx bx-collection"></i>
-                <h3 class="text_header title  "style ="color : purple">
+                <h3 class="text_header title  ">
                     Liste des événements 
                 </h3>
             </div>
