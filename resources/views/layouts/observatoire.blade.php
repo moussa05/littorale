@@ -21,16 +21,16 @@
     <header id="header" class="header fixed-top mb-3">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-start text-decoration-none">
+        <a href="{{ route('accueil') }}" class="logo d-flex align-items-start text-decoration-none">
             <!--img src="img/logoUCAD.jpg" alt=""-->
             <span>Observatoire littoral</span>
         </a>
         <nav id="navbar" class="navbar">
             <ul class="mr-5">
-                <li><a class="nav-link active" href="#">Accueil</a></li>
+                <li><a class="nav-link active" href="{{ route('accueil') }}">Accueil</a></li>
                 <li><a class="nav-link" href="#">A propos</a></li>
                 <li><a class="nav-link" href="#">Contact</a></li>
-                <li><a class="nav-link" href="#">Ressources &nbsp;</a></li>
+                <li><a class="nav-link" href="/login">Se connecter &nbsp;</a></li>
             </ul>
 
             <!-- Bouton modal recherche -->
