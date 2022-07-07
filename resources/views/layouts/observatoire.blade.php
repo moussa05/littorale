@@ -102,17 +102,17 @@
         </div>
     </div>
 
-    <div class="customizer-links">
-        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> 
+    <div class="customizer-links" >
+        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical" > 
             <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal">
-               <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
+               <div class="settings"><i class="icofont-alarm" style="color : rgb(51 ,0, 102);"></i></div><span>Lancer Alerte</span>
             </a>
              <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal2" >
-                <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
+                <div class="settings"><i class="icofont-users-alt-5" style="color : rgb(51 ,0, 102);"></i></div><span>Nous Rejoindre</span>
             </a> 
             <a  class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
                 data-bs-original-title="" title="">
-                <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
+                <div class="settings color-settings"><i class="icofont-book-mark" style="color : rgb(51 ,0, 102);"></i></div><span>A propos</span>
             </a> 
         </div>
     </div>

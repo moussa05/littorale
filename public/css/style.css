@@ -15,7 +15,7 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: purple;
+  background: rgb(51 ,0, 102);;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -259,7 +259,7 @@
 }
 
 .text_header {
-  color: purple;
+  color: rgb(51 ,0, 102);;
 }
 
 .liste_orders{
@@ -496,7 +496,7 @@ p.small {
   z-index: 0;
   border: 0.5px #72849e solid;
   overflow: hidden;
-  color : purple;
+  color : rgb(51 ,0, 102);;
 }
 .card1:before {
   content: "";
@@ -504,7 +504,7 @@ p.small {
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: purple;
+  background: rgb(51 ,0, 102);;
   height: 32px;
   width: 32px;
   border-radius: 32px;

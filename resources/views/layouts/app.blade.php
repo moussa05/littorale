@@ -26,7 +26,7 @@
 
     </head>
     <body>
-        <div class="sidebar close" style = "background-color : purple">
+        <div class="sidebar close" style = "background-color : rgb(51 ,0, 102);">
             <div class="logo-details">
                 <i class='bx bxl-c-plus-plus'></i>
                 <span class="logo_name">Observatoire</span>
@@ -132,13 +132,10 @@
                     $prenom = Auth::user()->prenom;
                     @endphp
                     <div class="profile-details">
-<<<<<<< HEAD
-                        <
-=======
+
                         <div class="profile-content">
                             <img src="https://avatars.dicebear.com/api/initials/{{$prenom." ".$nom}}.svg" alt="profileImg">
                         </div>
->>>>>>> 9b574590fb4023500c2ef34d8c43b6751541fc30
                         <div class="name-job">
                             <div class="profile_name">{{$prenom}}</div>
                             <div class="job">Administrateur</div>
