@@ -26,7 +26,7 @@
 
     </head>
     <body>
-        <div class="sidebar close">
+        <div class="sidebar close" style = "background-color : purple">
             <div class="logo-details">
                 <i class='bx bxl-c-plus-plus'></i>
                 <span class="logo_name">Observatoire</span>
@@ -44,7 +44,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="{{ url('admin/category') }}">
-                            <i class='bx bx-edit'></i>
+                            <i class='bx bx-customize'></i>
                             <span class="link_name">Categories</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -58,7 +58,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="{{ url('admin/document') }}">
-                            <i class='bx bx-book-alt'></i>
+                            <i class='bx bx-file'></i>
                             <span class="link_name">Documents</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -71,7 +71,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="#">
-                            <i class='bx bx-edit'></i>
+                            <i class='bx bx-file-blank'></i>
                             <span class="link_name">Article</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -85,7 +85,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="#">
-                            <i class='bx bx-book-alt'></i>
+                            <i class='bx bx-calendar-event'></i>
                             <span class="link_name">Evenements</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -99,7 +99,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="{{ route('users.index') }}">
-                            <i class='bx bx-collection'></i>
+                            <i class='bx bx-user'></i>
                             <span class="link_name">Administration</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -115,7 +115,7 @@
                 <li>
                     <div class="iocn-link">
                         <a href="#">
-                            <i class='bx bx-collection'></i>
+                            <i class='bx bx-bell'></i>
                             <span class="link_name">Alerte</span>
                         </a>
                         <i class='bx bxs-chevron-down arrow'></i>
@@ -128,9 +128,7 @@
                 </li>
                 <li>
                     <div class="profile-details">
-                        <div class="profile-content">
-                            <img src="/image/profile.jpg" alt="profileImg">
-                        </div>
+                        <
                         <div class="name-job">
                             <div class="profile_name">Mame Mar</div>
                             <div class="job">Administrateur</div>

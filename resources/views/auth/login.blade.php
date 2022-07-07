@@ -1,12 +1,14 @@
 <x-guest-layout>
 
 
-    <div class="screen-1">
+    <div class="screen-1" >
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
             width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
-            <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+            <g transform="matrix(3.31 0 0 3.31 320.4 240.4)" >
                 <circle
-                    style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(2, 27, 71); fill-rule: nonzero; opacity: 1;"
+                    style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; 
+                             stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; 
+                             fill: purple; fill-rule: nonzero; opacity: 1;"
                     cx="0" cy="0" r="40"></circle>
             </g>
             <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
@@ -60,7 +62,7 @@
                     <ion-icon class="show-hide" name="eye-outline"></ion-icon>
                 </div>
             </div>
-            <button type="submit" class="login" style="background-color: rgb(2, 27, 71);">Se Connecter</button>
+            <button type="submit" class="login" style="background-color: purple;">Se Connecter</button>
         </form>
     </div>
 
