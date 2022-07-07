@@ -9,7 +9,7 @@
             <div class="d-flex">
                 <i class="bx bx-add-to-queue"></i>
                 <h3 class="text_header  ">
-                    Nouveau Evénement
+                    Nouveau Article
                 </h3>
             </div>
         </div>
@@ -43,7 +43,7 @@
 
                <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Event name" ></textarea>
+                    <textarea required type="text" name="description" class="form-control" id="description" placeholder="Description article" ></textarea>
                 </div>
 
                 <div class="form-group">

@@ -13,6 +13,11 @@ class DocumentArticle extends Model
     const   ID_ARTICLE            = "idArticle";
     const   ID_DOCUMENT           = "idDocument";
 
+    public function article()
+    {
+        return $this->belongsTo(Publication::class, 'idPub');
+    }
+
     protected $fillable = [
         self::ID_ARTICLE,
         self::ID_DOCUMENT,

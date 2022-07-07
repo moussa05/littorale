@@ -21,9 +21,9 @@ use App\Http\Controllers\Admin\EvenementController;
 |
 */
 
-Route::get('/', [Controller::class,'accueil'])->name("accueil"); /*function () {
-    return view('welcome');
-});*/
+Route::get('/', [Controller::class,'accueil'])->name("accueil"); 
+Route::get('/articles', [ArticleController::class,'allArticles'])->name("articles"); 
+Route::get('/alertes', [AlerteController::class,'allAlertes'])->name("alertes"); 
 /*Route::get('/askToJoin', function () {
     return view('askToJoin');
 

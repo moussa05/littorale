@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/style_front.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icofont/icofont.css') }}">
     <script src="{{ asset('js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('js/popper.min.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
     <title>Observatoire du littorale</title>
@@ -20,16 +21,16 @@
     <header id="header" class="header fixed-top mb-3">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-start text-decoration-none">
+        <a href="{{ route('accueil') }}" class="logo d-flex align-items-start text-decoration-none">
             <!--img src="img/logoUCAD.jpg" alt=""-->
             <span>Observatoire littoral</span>
         </a>
         <nav id="navbar" class="navbar">
             <ul class="mr-5">
-                <li><a class="nav-link active" href="#">Accueil</a></li>
+                <li><a class="nav-link active" href="{{ route('accueil') }}">Accueil</a></li>
                 <li><a class="nav-link" href="#">A propos</a></li>
                 <li><a class="nav-link" href="#">Contact</a></li>
-                <li><a class="nav-link" href="#">Ressources &nbsp;</a></li>
+                <li><a class="nav-link" href="/login">Se connecter &nbsp;</a></li>
             </ul>
 
             <!-- Bouton modal recherche -->
@@ -101,17 +102,17 @@
         </div>
     </div>
 
-    <div class="customizer-links">
-        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> 
+    <div class="customizer-links" >
+        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical" > 
             <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal">
-               <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
+               <div class="settings"><i class="icofont-alarm" style="color : rgb(51 ,0, 102);"></i></div><span>Lancer Alerte</span>
             </a>
              <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal2" >
-                <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
+                <div class="settings"><i class="icofont-users-alt-5" style="color : rgb(51 ,0, 102);"></i></div><span>Nous Rejoindre</span>
             </a> 
             <a  class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
                 data-bs-original-title="" title="">
-                <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
+                <div class="settings color-settings"><i class="icofont-book-mark" style="color : rgb(51 ,0, 102);"></i></div><span>A propos</span>
             </a> 
         </div>
     </div>
