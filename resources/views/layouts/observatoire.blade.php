@@ -103,14 +103,16 @@
     </div>
 
     <div class="customizer-links">
-        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> <a
-            class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal">
-            <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
-            </a> <a class="nav-link" id="c-pills-home-tab"  >
-            <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
-            </a> <a class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
-            data-bs-original-title="" title="">
-            <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
+        <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical"> 
+            <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal">
+               <div class="settings"><i class="icofont-alarm"></i></div><span>Lancer Alerte</span>
+            </a>
+             <a class="nav-link" id="c-pills-home-tab" data-bs-toggle="modal" href="#myModal2" >
+                <div class="settings"><i class="icofont-users-alt-5"></i></div><span>Nous Rejoindre</span>
+            </a> 
+            <a  class="nav-link" id="c-pills-home-tab1" data-bs-toggle="pill" href="#c-pills-profile"
+                data-bs-original-title="" title="">
+                <div class="settings color-settings"><i class="icofont-book-mark"></i></div><span>A propos</span>
             </a> 
         </div>
     </div>
@@ -159,9 +161,92 @@
             </div>
         </div>
        
-
-
+  <!-- .Formulaire Demande inscription -->
+  <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header " style = "margin-left: 25%">
+                        <h5 class="modal-title" id="exampleModalLabel" >
+                            <strong style="color : purple">Demande d'adhésion</strong>
+                        </h5>
+                        
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            
+                        </div>
+                            @endif
+                        <form method="post" action="{{ route('join.store') }}" >
+                            @csrf
+                            <div class="form-row d-flex flex-row bd-highlight mb-3 ">
+                                <div class="col">
+                                <label for="FirstName">Nom</label>
+                                <input required type="text" class="form-control" name="firstname" placeholder="votre nom">
+                                </div>
+                                <div class="col" style = "margin-left : 1%">
+                                <label for="LastName">Prénom</label>
+                                <input required type="text" class="form-control" name= "lastname" placeholder="Votre prénom">
+                                </div>
+                            </div>
+                            <div class="form-row d-flex flex-row bd-highlight mb-3">
+                            <div class="form-group col">
+                                    <label for="inputEmail4">Email</label>
+                                    <input required type="email" class="form-control" name="mail" id="inputEmail4" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-row d-flex flex-row bd-highlight mb-3 ">
+                               <div class="form-group col">
+                                    <label for="birthDay">Date de naissance</label>
+                                    <input required type="date" name= "birth" class="form-control">
+                                </div>
+                                <div class="form-group col" style = "margin-left : 1%">
+                                    <label for="tel">Telephone</label>
+                                    <input required type="text" name="tel" class="form-control"  placeholder="770000000">
+                                </div>
+                            </div>
+                             <div class="form-row d-flex flex-row bd-highlight mb-3 ">
+                               <div class="form-group col">
+                                    <label for="inputPassword">Mot de passe</label>
+                                    <input required type="password" name="password" class="form-control" id="mdp" placeholder="Password">
+                                </div>
+                                <div class="form-group col" style = "margin-left : 1%">
+                                    <label for="inputPassword4">Confirmation mot de passe</label>
+                                    <input required type="password" name="password_conf" class="form-control" id="mdpc" placeholder="Password">
+                                </div>
+                            </div>
+                                               
+                            <div class="form-row d-flex flex-row bd-highlight mb-3 ">
+                                <div class="form-group col">
+                                    <label for="prof">Profession</label>
+                                    <input type="text" name = "prof" class="form-control" id="inputCity">
+                                </div>
+                                <div class="form-group col" style = "margin-left : 1%">
+                                    <label for="orga">Organisation</label>
+                                    <input type="text" name = "orga" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-primary">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
 
 </body>
 </html>
+
+
 

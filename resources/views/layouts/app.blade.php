@@ -107,8 +107,10 @@
                     <ul class="sub-menu">
                         <li><a class="link_name" href="#">Administration</a></li>
                         <li><a href="{{ route('users.index') }}">Tous les Admin</a></li>
+                        <li><a href="{{ route('join.index') }}">Demande d'ahésion</a></li>
                         <li><a href="#">Ajouter un Admin</a></li>
                     </ul>
+
                 </li>
                 <li>
                     <div class="iocn-link">
