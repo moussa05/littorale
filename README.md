@@ -1,5 +1,10 @@
 # Observatoire national du littoral
-Instant messaging app with "pure" HTML, CSS, JavaScript, AJAX and PHP
+Ce projet est une contribution au management digital du littoral et de ses ressources. Cette plateforme
+devra permettre aux acteurs de la Mer et du littoral (pêcheurs, acteurs services de l'état,
+scientifiques, ONG, le secteur privé et entreprise, ...) mais aussi aux populations environnantes de
+pouvoir en temps réel stocker des données (images, audio, vidéo, texte, ou tout autre format), de les
+partager, de diffuser des informations afin de renforcer le système d’alerte existant.
+
 ## Manuel d'installation
 
 Pour installer l’application, vous pouvez le cloner à partir de votre terminal en utilisant la commande git clone https://github.com/moussa05/littorale.git. Après avoir installé Laravel, Composer et un système de gestion de base de données MySQL sur votre ordinateur, vous pouvez suivre les étapes suivantes.
